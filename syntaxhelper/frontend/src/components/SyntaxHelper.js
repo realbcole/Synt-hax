@@ -28,7 +28,7 @@ export default function SyntaxHelper({ apiKey }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        axios.post(`https://synt-hax.vercel.app/gpt`, { apiKey: apiKey, prompt: input, language: language, explanation: explanation })
+        axios.post(`https://synt-hax-backend.vercel.app/gpt`, { apiKey: apiKey, prompt: input, language: language, explanation: explanation })
             .then((response) => {
                 setLoading(false);
                 const formattedResponse = (
