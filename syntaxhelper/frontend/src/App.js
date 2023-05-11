@@ -1,7 +1,7 @@
 import './App.css';
 import SyntaxHelper from './components/SyntaxHelper';
-import React from 'react';
-import { SettingsIcon } from './components/Icons';
+import React, { useEffect } from 'react';
+import { SettingsIcon, XIcon } from './components/Icons';
 
 // Sidebar component
 const Sidebar = ({ apiKey, setApiKey }) => {
@@ -40,22 +40,34 @@ function App() {
   // State variables
   const [showSideBar, setShowSideBar] = React.useState(false);
   const [apiKey, setApiKey] = React.useState('');
-
+  useEffect(() => {
+    document.title = "SYNT-HAX"
+  }, []);
   return (
-    <main className='bg-dark w-full h-screen text-light overflow-auto'>
-      <button
-        onClick={() => setShowSideBar(!showSideBar)}
-        className='z-20 absolute top-7 left-7 w-8 h-8'
-      >
-        <SettingsIcon
-          className='w-4 h-auto fill-light overflow-visible relative bottom-2'
-        />
-      </button>
-      {
-        showSideBar ? <Sidebar apiKey={apiKey} setApiKey={setApiKey} /> : null
-      }
-      <SyntaxHelper apiKey={apiKey} />
-    </main>
+    <>
+      <main className='bg-dark w-full h-screen text-light overflow-auto'>
+        <button
+          onClick={() => setShowSideBar(!showSideBar)}
+          className='z-20 absolute top-7 left-7 w-8 h-8'
+        >
+          {
+            showSideBar ?
+              <XIcon
+                className='w-6 h-auto fill-light overflow-visible relative left-1'
+              /> :
+              <
+                SettingsIcon
+                className='w-4 h-auto fill-light overflow-visible relative bottom-2'
+              />
+          }
+        </button>
+        {
+          showSideBar ? <Sidebar apiKey={apiKey} setApiKey={setApiKey} /> : null
+        }
+        <SyntaxHelper apiKey={apiKey} />
+      </main>
+    </>
+
   );
 }
 

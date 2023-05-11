@@ -49,61 +49,67 @@ export default function SyntaxHelper({ apiKey }) {
     }
 
     return (
-        <div className="text-center mt-10">
-            <h2 className='text-8xl font-bold'>SYNT-HAX</h2>
-            <h3 className='text-4xl font-bold text-primaryDark'>AI Syntax Helper</h3>
-            <p className='text-primary mt-5 mb-1'>
-                {apiKey ? '' : 'Please provide OpenAI API Key in Settings.'}
-            </p>
-            <form onSubmit={handleSubmit} className='w-3/4 flex flex-col justify-center mx-auto'>
-                <div className='flex items-center justify-center'>
-                    <input
-                        className='p-2 border border-light/75 rounded-3xl w-[50%] bg-dark'
-                        type='text'
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                    />
-                    <button
-                        className='w-10 h-10 ml-1'
-                        type='submit'
-                    >
-                        <SearchIcon className='fill-light overflow-visible w-4 h-auto relative bottom-2' />
-                    </button>
-                </div>
+        <>
+            <head>
+                <title>Synt-Hax</title>
+            </head>
+            <div className="text-center mt-10">
+                <h2 className='text-8xl font-bold'>SYNT-HAX</h2>
+                <h3 className='text-4xl font-bold text-primaryDark'>AI Syntax Helper</h3>
+                <p className='text-primary mt-5 mb-1'>
+                    {apiKey ? '' : 'Please provide OpenAI API Key in Settings.'}
+                </p>
+                <form onSubmit={handleSubmit} className='w-3/4 flex flex-col justify-center mx-auto'>
+                    <div className='flex items-center justify-center'>
+                        <input
+                            className='p-2 border border-light/75 rounded-3xl w-[50%] bg-dark'
+                            type='text'
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                        />
+                        <button
+                            className='w-10 h-10 ml-1'
+                            type='submit'
+                        >
+                            <SearchIcon className='fill-light overflow-visible w-4 h-auto relative bottom-2' />
+                        </button>
+                    </div>
 
-                <div className='flex items-center justify-center'>
-                    <label className='text-left mr-2'>Language: </label>
-                    <input
-                        className='p-2 border border-light/75 rounded w-[15%] bg-dark mt-4'
-                        type='text'
-                        value={language}
-                        onChange={(e) => setLanguage(e.target.value)}
-                    />
-                    <label className='mr-2 ml-4'>Explanation: </label>
-                    <select
-                        className='p-2 border border-light/75 rounded mt-4 mr-2 bg-dark'
-                        value={explanation}
-                        onChange={(e) => setExplanation(e.target.value)}
-                    >
-                        <option value='None'>None</option>
-                        <option value='Concise'>Concise</option>
-                        <option value='Detailed'>Detailed</option>
-                    </select>
-                </div>
-                <div className='mt-2 flex justify-center'>
-                    { // Loading spinner
-                        loading ? (
-                            <div
-                                className='mt-10 border border-primaryDark w-[100px] h-[100px] rounded-full 
+                    <div className='flex items-center justify-center'>
+                        <label className='text-left mr-2'>Language: </label>
+                        <input
+                            className='p-2 border border-light/75 rounded w-[15%] bg-dark mt-4'
+                            type='text'
+                            value={language}
+                            onChange={(e) => setLanguage(e.target.value)}
+                        />
+                        <label className='mr-2 ml-4'>Explanation: </label>
+                        <select
+                            className='p-2 border border-light/75 rounded mt-4 mr-2 bg-dark'
+                            value={explanation}
+                            onChange={(e) => setExplanation(e.target.value)}
+                        >
+                            <option value='None'>None</option>
+                            <option value='Concise'>Concise</option>
+                            <option value='Detailed'>Detailed</option>
+                        </select>
+                    </div>
+                    <div className='mt-2 flex justify-center'>
+                        { // Loading spinner
+                            loading ? (
+                                <div
+                                    className='mt-10 border border-primaryDark w-[100px] h-[100px] rounded-full 
                             animate-spin-slow'
-                            />
-                        ) : (
-                            output
-                        )
-                    }
-                </div>
-            </form>
-            <Footer />
-        </div>
+                                />
+                            ) : (
+                                output
+                            )
+                        }
+                    </div>
+                </form>
+                <Footer />
+            </div>
+        </>
+
     )
 }
