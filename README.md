@@ -18,7 +18,7 @@
 ## 🧐 About <a name = "about"></a>
 Synt-Hax is a React-based app that leverages OpenAI's language processing API to provide developers with syntax suggestions and explanations. It helps users overcome syntax roadblocks and increase programming productivity. The app uses ExpressJS and NodeJS for server-side communication and TailwindCSS for UI styling.
 
-<img src="./syntaxhelper/frontend/public/images" alt="Synt-hax Screenshot">
+<img src="./syntaxhelper/frontend/public/images/synt-hax.png" alt="Synt-hax Screenshot">
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [React](https://react.dev/) - Web framework
