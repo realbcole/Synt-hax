@@ -1,14 +1,12 @@
 <p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://imgur.com/h41eZJU" alt="Project logo"></a>
+  <blockquote class="imgur-embed-pub" lang="en" data-id="a/h41eZJU" data-context="false" ><a href="//imgur.com/a/h41eZJU"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 </p>
 
 <h3 align="center">SYNT-HAX</h3>
 
 <div align="center">
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![Live Demo]()](https://synt-hax.vercel.app/)
-
+  <a href="https://synt-hax.vercel.app/">Live Demo</a>
 </div>
 
 ---
